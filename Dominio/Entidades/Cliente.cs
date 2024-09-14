@@ -35,10 +35,7 @@ namespace Dominio.Entidades
         public void Validar()
         {
             ValidarCedula();
-
-
         }
-
         private void ValidarCedula()
         {
             if (string.IsNullOrEmpty(Cedula) || Cedula.Length != 8)
@@ -50,11 +47,11 @@ namespace Dominio.Entidades
         public override string ToString()
         {
             string respuesta = string.Empty;
-            respuesta += $"Cedula: {Cedula} \n:";
-            respuesta += $"Nombre Completo: {NombreCompleto} \n:";
+            respuesta += $"Cedula: {Cedula} \n";
+            respuesta += $"Nombre Completo: {NombreCompleto} \n";
             foreach (Cuenta item in _cuentas)
             {
-                respuesta += $"Cuentas - - >{item.TipoMoneda} (Saldo: {item.SaldoActual})";
+                respuesta += $"Cuentas - - >{item}";
             }
             return respuesta;
         }

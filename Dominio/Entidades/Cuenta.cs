@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Dominio.Entidades
+﻿namespace Dominio.Entidades
 {
     public class Cuenta
     {
@@ -33,13 +27,19 @@ namespace Dominio.Entidades
             {
                 return "pesos";
             }
-            else { return "dolares"; }
+            if (tipoMoneda == 2)
+            {
+                return "dolares";
+            }
+            else
+            {
+                return "moneda invalida";
+            }
         }
         public override string ToString()
         {
             string respuesta = string.Empty;
-            respuesta += $"Tipo de moneda: {ValidarMoneda(TipoMoneda)} \n:";
-            respuesta += $"Saldo actual: {SaldoActual} \n:";
+            respuesta += $"Tipo de moneda: {ValidarMoneda(TipoMoneda)} Saldo actual: {SaldoActual}\n";
             return respuesta;   
         }
     }
